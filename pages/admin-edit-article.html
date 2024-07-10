@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://cdn.tailwindcss.com"></script>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet">
+   <link rel="icon" href="/assets/krl-logo.png">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+   <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+   <title>Admin Edit Article</title>
+</head>
+
+<body>
+   <!-- NAVBAR SECTION STARTED -->
+   <nav class="bg-red-600 border border-red-600 px-5" style="font-family: 'Poppins', serif;">
+      <div class="max-w-screen-lg flex flex-wrap items-center justify-between mx-auto p-4">
+         <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="/assets/krl-logo.png" class="h-8" alt="Logo" />
+            <span class="self-center text-xl font-extrabold whitespace-nowrap text-white">KRL-DAILY</span>
+         </a>
+         <button data-collapse-toggle="navbar-default" type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            aria-controls="navbar-default" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15" />
+            </svg>
+         </button>
+         <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul
+               class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-red-600 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+               <li>
+                  <a href="admin-home.html"
+                     class="block py-2 px-3 hover:text-white hover:underline text-gray-100 rounded md:p-0"
+                     aria-current="page">Beranda</a>
+               </li>
+               <li>
+                  <a id="edit-article" href="#"
+                     class="block py-2 px-3 text-white hover:underline rounded md:p-0 underline">Edit
+                     Artikel</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <!-- NAVBAR SECTION ENDED -->
+
+   <!-- CREATE ARTICLE SECTION STARTED -->
+   <section class="bg-gray-50 text-white pb-2 px-5 py-5" style="font-family: Poppins', serif;">
+      <div class="max-w-screen-lg mx-auto p-4 border border-white shadow">
+         <div class="flex flex-col">
+            <input type="hidden" id="article-uid"
+               class=" text-black text-md bg-transparent border-none focus:ring-gray-50 focus:border-none block w-full placeholder-gray-400 placeholder-opacity-70"
+               placeholder="UID" required="">
+
+            <input type="text" id="article-title-input"
+               class="text-black text-5xl bg-gray-50 border border-black focus:ring-black focus:border-white block w-full placeholder-gray-500 placeholder-opacity-70"
+               placeholder="Judul" required="">
+
+            <img id="display-thumbnail-image" src="" alt="" class="w-64 pt-4">
+            <label for="" class="italic text-sm text-gray-600">Gambar saat ini</label>
+
+            <div class="py-4">
+               <label class="block mb-2 text-sm font-medium text-gray-400" for="file_input">Upload Gambar Baru
+                  (Optional)</label>
+               <input
+                  class="block w-64 text-sm text-white border border-white cursor-pointer bg-black focus:outline-none"
+                  aria-describedby="file_input_help" id="file_input_edit" type="file" accept=".jpg, .jpeg, .png, .gif">
+               <p class="mt-1 text-sm text-gray-500" id="file_input_help">SVG, PNG, JPG atau GIF.</p>
+
+               <select id="category-article-input"
+                  class="block py-2.5 my-7 px-2 text-md text-white bg-black border border-white appearance-none focus:outline-none focus:ring-black focus:border-white peer"
+                  required>
+                  <option disabled selected>Pilih Kategori</option>
+                  <option value="Berita">Berita</option>
+                  <option value="Rute">Rute</option>
+                  <option value="Kereta">Kereta</option>
+                  <option value="Masinis">Masinis</option>
+               </select>
+
+               <textarea id="content-article-input" cols="30" rows="10"
+                  class="w-full text-black border-white focus:outline-none focus:ring-black focus:border-white"></textarea>
+
+               <button type="button" id="edit-article-btn"
+                  class="mr-3 focus:outline-none text-white bg-gray-600 hover:bg-gray-900 font-medium text-sm py-2 px-4 rounded-md mt-4">Edit
+                  Artikel</button>
+               <button type="button" id="delete-article-btn"
+                  class="focus:outline-none text-white bg-red-600 hover:bg-red-800 font-medium text-sm py-2 px-4 rounded-md mt-4">Hapus
+                  Artikel</button>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- CREATE ARTICLE SECTION ENDED -->
+
+   <script>
+      // Inisialisasi SimpleMDE
+      var simplemde = new SimpleMDE({
+         element: document.getElementById("content-article-input"), // Menghubungkan dengan elemen textarea
+         toolbar: false, // Menonaktifkan toolbar
+         status: false, // Menonaktifkan status bar di bawah editor
+         autosave: {
+            enabled: false,
+            uniqueId: "MyUniqueID",
+            delay: 1000,
+         },
+         placeholder: "Ubah sesuatu disini...", // Placeholder teks
+         autofocus: true, // Fokus otomatis pada editor
+         spellChecker: true, // Menonaktifkan pemeriksa ejaan
+         forceSync: true, // Menyinkronkan konten ke elemen textarea
+         indentWithTabs: true, // Menggunakan spasi untuk indentasi, bukan tab
+         lineWrapping: true, // Mengaktifkan pembungkusan baris
+         renderingConfig: {
+            codeSyntaxHighlighting: false // Menonaktifkan penyorotan sintaks kode
+         },
+         status: ["lines", "words"], // Optional usage
+         shortcuts: {
+            toggleBold: null, // Menonaktifkan shortcut bold
+            toggleItalic: null, // Menonaktifkan shortcut italic
+            drawLink: null, // Menonaktifkan shortcut link
+            drawImage: null, // Menonaktifkan shortcut image
+            drawTable: null, // Menonaktifkan shortcut table
+            drawHorizontalRule: null, // Menonaktifkan shortcut horizontal rule
+            togglePreview: null, // Menonaktifkan shortcut preview
+            toggleSideBySide: null, // Menonaktifkan shortcut side-by-side
+            toggleFullScreen: null // Menonaktifkan shortcut full screen
+         }
+      });
+   </script>
+
+   <script type="module" src="/database-config.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+
+</html>
