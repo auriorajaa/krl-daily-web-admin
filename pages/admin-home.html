@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://cdn.tailwindcss.com"></script>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet">
+   <link rel="icon" href="/assets/krl-logo.png">
+   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <style>
+      .list.active {
+         color: #ff0000;
+      }
+
+      .list.active:hover {
+         text-decoration: underline;
+      }
+   </style>
+
+   <title>KRL-DAILY BERANDA</title>
+</head>
+
+<body class="bg-gray-50">
+
+   <!-- NAVBAR SECTION STARTED -->
+   <nav class="bg-red-600 border border-red-600 px-5" style="font-family: 'Poppins', serif;">
+      <div class="max-w-screen-lg flex flex-wrap items-center justify-between mx-auto p-4">
+         <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="/assets/krl-logo.png" class="h-8" alt="Logo" />
+            <span class="self-center text-xl font-extrabold whitespace-nowrap text-white">KRL-DAILY</span>
+         </a>
+         <button data-collapse-toggle="navbar-default" type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            aria-controls="navbar-default" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15" />
+            </svg>
+         </button>
+         <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul
+               class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-red-600 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+               <li>
+                  <a href="#" class="block py-2 px-3 text-white rounded md:p-0 underline"
+                     aria-current="page">Beranda</a>
+               </li>
+               <li>
+                  <a href="admin-create-article.html"
+                     class="block py-2 px-3 text-gray-100 hover:underline rounded md:p-0">Buat Artikel</a>
+               </li>
+               <li>
+                  <a href="/index.html" id="logout"
+                     class="block py-2 px-3 text-gray-100 rounded md:p-0 hover:underline">Keluar</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <!-- NAVBAR SECTION ENDED -->
+
+   <!-- HERO SECTION STARTED -->
+   <section class="bg-gray-50 px-5" style="font-family: 'Manrope', sans-serif;">
+      <div class="py-4 mx-auto max-w-screen-lg lg:py-12 px-4">
+         <h1 class="mb-5 text-4xl font-extrabold leading-none text-gray-900 md:text-5xl lg:text-6xl text-gray-900">
+            Kelola Semua Disini...</h1>
+         <p class="mb-8 text-md font-medium text-gray-500">
+            Hi Admin! Buat dan bagikan hal penting seputar KRL untuk masyarakat disini, buat mereka selalu up-to-date!
+         </p>
+      </div>
+   </section>
+   <!-- HERO SECTION ENDED -->
+
+   <!-- RECENT ARTICLE SECTION STARTED -->
+   <section class="bg-gray-50 px-5 mb-5" style="font-family: 'Poppins', serif;">
+      <div class="max-w-screen-lg mx-auto px-4">
+         <h1 class="text-4xl pb-2">Artikel Terbaru</h1>
+         <hr>
+         <div id="display-recent-article" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 pt-4 gap-3">
+            <!-- Card 1 -->
+            <div class="flex items-center">
+               <img src="https://i.ytimg.com/vi/hbN-nYQuDG4/maxresdefault.jpg" alt=""
+                  class="rounded-md object-cover w-24 h-24 mr-4">
+               <div>
+                  <h1 class="text-lg font-bold">Judul Artikel 1</h1>
+                  <p class="text-sm text-gray-600 italic">20/07/2024</p>
+               </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="flex items-center">
+               <img src="https://i.ytimg.com/vi/hbN-nYQuDG4/maxresdefault.jpg" alt=""
+                  class="rounded-md object-cover w-24 h-24 mr-4">
+               <div>
+                  <h1 class="text-lg font-bold">Judul Artikel 2</h1>
+                  <p class="text-sm text-gray-600 italic">20/07/2024</p>
+               </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="flex items-center">
+               <img src="https://i.ytimg.com/vi/hbN-nYQuDG4/maxresdefault.jpg" alt=""
+                  class="rounded-md object-cover w-24 h-24 mr-4">
+               <div>
+                  <h1 class="text-lg font-bold">Judul Artikel 3</h1>
+                  <p class="text-sm text-gray-600 italic">20/07/2024</p>
+               </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="flex items-center">
+               <img src="https://i.ytimg.com/vi/hbN-nYQuDG4/maxresdefault.jpg" alt=""
+                  class="rounded-md object-cover w-24 h-24 mr-4">
+               <div>
+                  <h1 class="text-lg font-bold">Judul Artikel 4</h1>
+                  <p class="text-sm text-gray-600 italic">20/07/2024</p>
+               </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="flex items-center">
+               <img src="https://i.ytimg.com/vi/hbN-nYQuDG4/maxresdefault.jpg" alt=""
+                  class="rounded-md object-cover w-24 h-24 mr-4">
+               <div>
+                  <h1 class="text-lg font-bold">Judul Artikel 5</h1>
+                  <p class="text-sm text-gray-600 italic">20/07/2024</p>
+               </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="flex items-center">
+               <img src="https://i.ytimg.com/vi/hbN-nYQuDG4/maxresdefault.jpg" alt=""
+                  class="rounded-md object-cover w-24 h-24 mr-4">
+               <div>
+                  <h1 class="text-lg font-bold">Judul Artikel 6</h1>
+                  <p class="text-sm text-gray-600 italic">20/07/2024</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- RECENT ARTICLE SECTION ENDED -->
+
+
+   <!-- CATEGORY ARTICLE SECTION STARTED -->
+   <section class="bg-gray-50 pb-2 px-5 mt-10" style="font-family: 'Manrope', sans-serif;">
+      <div class="max-w-screen-lg mx-auto px-4">
+         <div class="flex justify-between items-center">
+            <h2 class="text-4xl pb-2">Kategori</h2>
+            <div class="flex items-center">
+               <input type="text" id="new-category" placeholder="Kategori Baru"
+                  class="border-none rounded-md p-2 text-gray-700 ring-0 focus:ring-0" />
+               <button id="add-category-btn"
+                  class="ml-2 text-black hover:underline hover:text-gray-900 px-3 py-2 rounded-md">
+                  Tambah
+               </button>
+            </div>
+         </div>
+         <hr>
+         <ul id="category-list" class="list-none flex flex-row gap-5 pt-2">
+            <li data-filter="all"
+               class="list active cursor-pointer focus:outline-none focus:ring-4 font-medium text-md py-2">
+               Semua
+            </li>
+         </ul>
+      </div>
+   </section>
+   <!-- CATEGORY ARTICLE SECTION ENDED -->
+
+   <!-- ARTICLE SECTION STARTED -->
+   <section class="bg-gray-50 pt-10 px-5" style="font-family: 'Poppins', serif;">
+      <div class="max-w-screen-lg mx-auto px-4">
+         <h1 class="text-4xl pb-2">Semua Artikel</h1>
+         <hr>
+         <div id="display-article" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-4 gap-3">
+            <div>
+               <a href="admin-article.html?uid=${uid}"
+                  class="flex flex-col gap-2 py-2  transform transition-transform duration-500 ease-in-out hover:scale-110">
+                  <img src="https://i.ytimg.com/vi/hbN-nYQuDG4/maxresdefault.jpg" alt=""
+                     class="rounded-md object-cover w-full h-56">
+                  <h1 class="text-lg font-bold tracking-tight pt-2">Judul Artikel</h1>
+                  <div class="flex flex-row justify-between">
+                     <p class="text-sm text-gray-600 italic">Kategori</p>
+                     <p class="text-sm text-gray-600 italic">20/07/2024</p>
+                  </div>
+                  <p class="text-sm py-2 text-gray-700">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                     Voluptatum provident laboriosam placeat corporis, vel obcaecati nostrum, temporibus iusto cum
+                     labore laudantium, aliquid saepe autem nisi quidem porro necessitatibus odio quo.</p>
+               </a>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- ARTICLE SECTION ENDED -->
+
+   <!-- FOOTER SECTION STARTED -->
+   <footer class="bg-gray-50">
+      <div class="mx-auto w-full max-w-screen-lg p-4 py-6 lg:py-8">
+         <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+         <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center">© 2024 <a href="#" class="hover:underline">KRL-DAILY™</a>. All Rights Reserved.
+            </span>
+         </div>
+      </div>
+   </footer>
+   <!-- FOOTER SECTION ENDED -->
+
+   <script>
+      $(document).ready(function () {
+         // Menggunakan delegasi event untuk elemen yang dibuat secara dinamis
+         $('#category-list').on('click', '.list', function () {
+            // Mengambil nilai dari atribut 'data-filter' pada elemen yang diklik
+            const value = $(this).attr('data-filter');
+
+            // Jika nilai adalah 'all'
+            if (value === 'all') {
+               // Tampilkan semua elemen dengan kelas 'itemBox' dengan efek durasi 1000ms
+               $('.itemBox').show('1000');
+            } else {
+               // Sembunyikan semua elemen dengan kelas 'itemBox' terlebih dahulu
+               $('.itemBox').hide();
+               // Tampilkan hanya elemen dengan kelas 'itemBox' yang sesuai dengan nilai 'data-filter', dengan efek durasi 1000ms
+               $('.itemBox.' + value).show('1000');
+            }
+
+            // Tambahkan kelas 'active' ke elemen yang diklik dan hapus kelas 'active' dari saudara-saudaranya
+            $(this).addClass('active').siblings().removeClass('active');
+         });
+      });
+   </script>
+
+   <script type="module" src="/database-config.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+
+</html>
